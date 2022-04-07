@@ -14,7 +14,7 @@ public class GameController : MonoBehaviour
     private void Awake()
     {
         DialogCanvas.enabled = false;
-        GameOverCanvas.enabled = false;
+        //GameOverCanvas.enabled = false;
 
     }
 }
