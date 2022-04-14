@@ -189,7 +189,7 @@ MonoBehaviour:
   - {fileID: 558744509}
   - {fileID: 505333774}
   - {fileID: 140793417}
-  duration: -1
+  duration: 5
   m_Angle: 0
 --- !u!61 &154485406
 BoxCollider2D:
@@ -612,8 +612,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb49e6cbcf95c6a4fb8121d575a08445, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GameOverCanvas: {fileID: 0}
+  GameOverCanvas: {fileID: 1344340441}
   DialogCanvas: {fileID: 1344340441}
+  gameOver: {fileID: 383839568}
+  DialogText: {fileID: 1989157150}
+  UIText: {fileID: 689461275}
+  DialogImage: {fileID: 989002557}
+  UIImage: {fileID: 1963710528}
 --- !u!4 &490193547
 Transform:
   m_ObjectHideFlags: 0
@@ -913,6 +918,34 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   text: hello
+  textBox: {fileID: 989002557}
+  Talking:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 989002557}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1989157150}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!61 &922560204
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1373,6 +1406,7 @@ MonoBehaviour:
   beingDetected: 0
   fillDetectionBar: 0
   time: 0
+  myGameOver: {fileID: 0}
 --- !u!1 &1344340438
 GameObject:
   m_ObjectHideFlags: 0
@@ -2372,12 +2406,13 @@ MonoBehaviour:
       m_Calls: []
   gameOverText: {fileID: 383839568}
   myCanvas: {fileID: 1555036804}
-  detectionTime: 5
+  detectionTime: 1
   initialTime: 0
   detectionBar: {fileID: 1868994663}
   beingDetected: 0
   fillDetectionBar: 0
   time: 0
+  myGameOver: {fileID: 383839568}
 --- !u!1 &2126030413
 GameObject:
   m_ObjectHideFlags: 0

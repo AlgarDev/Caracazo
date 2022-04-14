@@ -27,12 +27,14 @@ public class Detection : MonoBehaviour
 
     [SerializeField]
     private bool beingDetected;
-    private float helpMeGod;
+
     [SerializeField]
     private float fillDetectionBar;
 
     [SerializeField]
     private float time;
+    [SerializeField]
+    private Text myGameOver;
 
     private void Start()
     {
@@ -40,7 +42,7 @@ public class Detection : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        initialTime = Time.time;// + helpMeGod;
+        initialTime = Time.time;
 
         playerDetectionCoroutine = StartCoroutine(DetectionTimer());
        beingDetected = true;
@@ -49,7 +51,6 @@ public class Detection : MonoBehaviour
     {
         StopCoroutine(playerDetectionCoroutine);
         beingDetected = false;
-        helpMeGod = initialTime;
     }
     private void Update()
     {
@@ -76,6 +77,7 @@ public class Detection : MonoBehaviour
     private void GameOver()
     {
         myCanvas.enabled = true;
+        myGameOver.enabled = true;
         gameOverText.text = "Game Over";
         player.Invoke();
         Time.timeScale = 0;
